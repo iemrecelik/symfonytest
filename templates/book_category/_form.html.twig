@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+    
+    <select name="{{ field_name(form.bookCategory) }}" class="form-control">
+        <option value="">Üst kategori yok</option>
+
+        {% for label, value in field_choices(form.bookCategory) %}
+            {% if bookCategory.bookCategory.id is defined and value == bookCategory.bookCategory.id %}
+                <option selected value="{{ value }}">{{ label }}</option>
+            {% else %}
+                <option value="{{ value }}">{{ label }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
