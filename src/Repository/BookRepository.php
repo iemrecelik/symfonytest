@@ -3,10 +3,15 @@
 namespace App\Repository;
 
 use App\Entity\Book;
+<<<<<<< HEAD
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
+=======
 use App\Entity\Author;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
+>>>>>>> 50ec0615f45b65cf1eb4b58f6530eee7522c93a5
 
 /**
  * @extends ServiceEntityRepository<Book>
@@ -18,6 +23,11 @@ use Doctrine\ORM\EntityManagerInterface;
  */
 class BookRepository extends ServiceEntityRepository
 {
+<<<<<<< HEAD
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Book::class);
+=======
     private EntityManagerInterface $em;
 
     public function __construct(ManagerRegistry $registry, EntityManagerInterface $em)
@@ -49,6 +59,7 @@ class BookRepository extends ServiceEntityRepository
         $this->em->flush();
 
         return true;
+>>>>>>> 50ec0615f45b65cf1eb4b58f6530eee7522c93a5
     }
 
 //    /**

@@ -3,9 +3,14 @@
 namespace App\Repository;
 
 use App\Entity\Author;
+<<<<<<< HEAD
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
+=======
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+>>>>>>> 50ec0615f45b65cf1eb4b58f6530eee7522c93a5
 
 /**
  * @extends ServiceEntityRepository<Author>
@@ -17,6 +22,11 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
  */
 class AuthorRepository extends ServiceEntityRepository
 {
+<<<<<<< HEAD
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Author::class);
+=======
     private EntityManagerInterface $em;
 
     public function __construct(ManagerRegistry $registry, EntityManagerInterface $em)
@@ -33,6 +43,7 @@ class AuthorRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
+>>>>>>> 50ec0615f45b65cf1eb4b58f6530eee7522c93a5
     }
 
 //    /**
